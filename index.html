@@ -1,0 +1,275 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#09090d">
+<meta name="description" content="Ashish's personal portfolio, creative work and freelance services.">
+<title>Ashish | Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#09090d;--panel:#13131b;--text:#f5f5fa;--muted:#a4a4b5;--accent:#b8ff65;--border:rgba(255,255,255,.1)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{background:radial-gradient(ellipse at 80% 0%,rgba(110,65,230,.13),transparent 35%),var(--bg);color:var(--text);font-family:"DM Sans",sans-serif;line-height:1.65}
+a{color:inherit;text-decoration:none}
+.container{width:min(1050px,90%);margin:auto}
+.accent{color:var(--accent)}.muted{color:var(--muted)}
+header{position:sticky;top:0;z-index:10;background:rgba(9,9,13,.88);backdrop-filter:blur(18px);border-bottom:1px solid var(--border)}
+nav{min-height:70px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.logo{font:700 1.4rem "Space Grotesk",sans-serif;letter-spacing:-1px}
+.logo span{color:var(--accent)}
+.navlinks{display:flex;gap:23px;align-items:center}
+.navlinks a{font-size:.88rem;color:var(--muted)}
+.navlinks a:hover{color:var(--accent)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:10px;font-weight:700;font-size:.9rem;border:1px solid var(--border);transition:.2s}
+.btn:hover{transform:translateY(-3px)}
+.primary{background:var(--accent);color:#10120c;border-color:var(--accent)}
+.secondary{background:rgba(255,255,255,.035)}
+.hero{min-height:620px;display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center;padding:75px 0 85px}
+.eyebrow{text-transform:uppercase;letter-spacing:2.5px;color:var(--accent);font-size:.77rem;font-weight:700}
+.availability{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--border);background:rgba(255,255,255,.035);padding:7px 12px;border-radius:50px;font-size:.78rem;margin-bottom:23px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent)}
+h1,h2,h3{font-family:"Space Grotesk",sans-serif;line-height:1.15}
+h1{font-size:clamp(2.8rem,6.5vw,5rem);letter-spacing:-3px}
+.hero p{color:var(--muted);max-width:510px;margin:22px 0 27px;font-size:1.02rem}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.hero-meta{margin-top:28px;color:var(--muted);font-size:.83rem}
+.photo-wrap{width:min(100%,350px);margin:auto;position:relative}
+.photo-frame{aspect-ratio:4/5;padding:9px;border:1px solid rgba(184,255,101,.5);border-radius:24px;background:linear-gradient(145deg,rgba(184,255,101,.12),rgba(110,65,230,.15));transform:rotate(2deg);box-shadow:0 25px 90px #0008}
+.photo-inner{height:100%;width:100%;border-radius:16px;overflow:hidden;background:radial-gradient(circle at 50% 35%,#b8ff6522,transparent 40%),#171720;display:flex;align-items:center;justify-content:center}
+.photo-inner img{width:100%;height:100%;object-fit:cover}
+.placeholder{text-align:center;padding:20px}.placeholder .avatar{font-size:5rem}.placeholder p{font-size:.85rem;color:var(--muted);margin-top:10px}
+.float-card{position:absolute;right:-18px;bottom:28px;background:#191922;border:1px solid var(--border);border-radius:12px;padding:13px 16px;box-shadow:0 10px 35px #0006;font-size:.82rem}
+.float-card strong{display:block;color:var(--accent);font-size:1rem}
+section{padding:75px 0}
+.section-head{margin-bottom:30px}
+.section-head h2{font-size:clamp(2rem,4vw,3rem);letter-spacing:-1px;margin-top:9px}
+.section-head p{color:var(--muted);margin-top:10px;max-width:580px}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.panel{background:var(--panel);border:1px solid var(--border);border-radius:17px;padding:25px}
+.panel h3{font-size:1.2rem;margin-bottom:12px}
+.panel p{color:var(--muted);font-size:.94rem}
+.skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:17px}
+.skill{border:1px solid var(--border);background:#ffffff06;border-radius:8px;padding:8px 12px;font-size:.85rem;color:#dedee9}
+.skill:hover{border-color:var(--accent)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+.stat{border:1px solid var(--border);background:#ffffff04;border-radius:12px;padding:15px}
+.stat strong{display:block;font:700 1.3rem "Space Grotesk",sans-serif;color:var(--accent)}
+.stat span{font-size:.78rem;color:var(--muted)}
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.project{background:var(--panel);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:transform .25s,border-color .25s}
+.project:hover{transform:translateY(-5px);border-color:#b8ff6577}
+.project-art{height:150px;display:flex;align-items:center;justify-content:center;font-size:2.7rem;background:radial-gradient(circle at 50% 35%,#b8ff6522,transparent 55%),#1a1a24}
+.project-body{padding:20px}
+.project-body h3{font-size:1.12rem;margin-bottom:8px}
+.project-body p{color:var(--muted);font-size:.88rem;min-height:55px}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0}
+.tags span{font-size:.72rem;color:var(--accent);background:#b8ff6510;padding:5px 8px;border-radius:6px}
+.project-link{font-size:.86rem;font-weight:700}
+.project-link:hover{color:var(--accent)}
+.contact-box{padding:35px;border:1px solid #b8ff6533;border-radius:20px;background:radial-gradient(ellipse at 100% 0%,#b8ff6511,transparent 55%),var(--panel);display:flex;align-items:center;justify-content:space-between;gap:25px}
+.contact-box h2{font-size:clamp(1.8rem,4vw,2.8rem);margin:10px 0}
+.contact-box p{color:var(--muted);max-width:520px}
+.contact-actions{display:flex;flex-wrap:wrap;gap:10px}
+.socials{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.socials a{border:1px solid var(--border);padding:9px 13px;border-radius:9px;color:var(--muted);font-size:.85rem}
+.socials a:hover{color:var(--accent);border-color:var(--accent)}
+footer{border-top:1px solid var(--border);padding:24px 0;color:var(--muted);font-size:.82rem}
+.footer-inner{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.reveal{animation:rise .7s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:760px){
+ .navlinks{gap:13px}.navlinks a{font-size:.78rem}
+ .nav-contact{display:none}
+ .hero{grid-template-columns:1fr;gap:45px;padding:65px 0}
+ .hero-copy{order:1}.photo-wrap{order:0;width:min(70%,290px)}
+ h1{letter-spacing:-2px}
+ .about-grid{grid-template-columns:1fr}
+ .projects{grid-template-columns:1fr 1fr}
+ .contact-box{align-items:flex-start;flex-direction:column;padding:25px}
+ section{padding:60px 0}
+}
+@media(max-width:480px){
+ .container{width:90%}
+ nav{min-height:64px}.logo{font-size:1.2rem}.navlinks{gap:11px}
+ .navlinks a{font-size:.75rem}
+ .hero{min-height:auto;padding:48px 0 60px}
+ h1{font-size:2.8rem}
+ .hero p{font-size:.95rem}
+ .photo-wrap{width:72%}
+ .projects{grid-template-columns:1fr}
+ .project-art{height:130px}
+ .stats{gap:8px}.stat{padding:11px 8px}.stat strong{font-size:1.1rem}.stat span{font-size:.7rem}
+ .panel{padding:20px}
+ .btn{padding:11px 14px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="container">
+    <a href="#home" class="logo">ASHISH<span>.</span></a>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="btn primary nav-contact" href="#contact">Let's Talk ↗</a>
+  </nav>
+</header>
+
+<main>
+  <div class="container">
+    <section class="hero" id="home">
+      <div class="hero-copy reveal">
+        <div class="availability"><span class="dot"></span> Creative mind · Always learning</div>
+        <div class="eyebrow">Hello, welcome to my world</div>
+        <h1>I'm Ashish.<br><span class="accent">I create</span><br>digital things.</h1>
+        <p>
+          I'm a learner and aspiring freelancer passionate about creative design,
+          digital content and technology. I turn ideas into meaningful digital experiences
+          while learning something new every day.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="#projects">Explore My Work ↗</a>
+          <a class="btn secondary" href="#contact">Contact Me</a>
+        </div>
+        <div class="hero-meta">📍 Rajasthan, India &nbsp; · &nbsp; Open to learning and collaboration</div>
+      </div>
+
+      <div class="photo-wrap reveal">
+        <div class="photo-frame">
+          <div class="photo-inner" id="photoBox">
+            <!-- Upload your photo to the repository as profile.jpg -->
+            <img src="profile.jpg" alt="Ashish's profile photo"
+                 onerror="this.style.display='none';document.getElementById('photoFallback').style.display='block'">
+            <div class="placeholder" id="photoFallback" style="display:none">
+              <div class="avatar">👤</div>
+              <strong>Your Photo Here</strong>
+              <p>Add profile.jpg to your GitHub repository.</p>
+            </div>
+          </div>
+        </div>
+        <div class="float-card"><strong>CREATIVE ✦</strong>Learning. Building. Growing.</div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="section-head">
+        <div class="eyebrow">A little about me</div>
+        <h2>Building my <span class="accent">next chapter.</span></h2>
+        <p>Curiosity drives me. Consistency keeps me moving. Every project is a chance to improve.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="panel">
+          <h3>Who I Am</h3>
+          <p>
+            I'm Ashish from Rajasthan, India. I'm pursuing my graduation and
+            developing practical skills in digital creativity and technology.
+            My goal is to build useful projects, work with people worldwide,
+            and grow personally and professionally.
+          </p>
+        </div>
+        <div class="panel">
+          <h3>Skills I'm Developing</h3>
+          <p>My current creative and technical interests.</p>
+          <div class="skills">
+            <span class="skill">Canva Design</span>
+            <span class="skill">Thumbnail Design</span>
+            <span class="skill">Video Editing</span>
+            <span class="skill">Social Media</span>
+            <span class="skill">HTML & CSS</span>
+            <span class="skill">Basic Python</span>
+            <span class="skill">MS Office</span>
+            <span class="skill">Content Creation</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><strong>01</strong><span>Keep Learning</span></div>
+        <div class="stat"><strong>02</strong><span>Create & Improve</span></div>
+        <div class="stat"><strong>∞</strong><span>Ideas to Explore</span></div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-head">
+        <div class="eyebrow">Selected work</div>
+        <h2>Things I'm <span class="accent">building.</span></h2>
+        <p>A growing collection of creative experiments and digital projects. Replace these sample cards with your real work.</p>
+      </div>
+
+      <div class="projects">
+        <article class="project">
+          <div class="project-art">🎨</div>
+          <div class="project-body">
+            <h3>Creative Design</h3>
+            <p>Visual concepts, social media graphics and thumbnail design experiments.</p>
+            <div class="tags"><span>Canva</span><span>Design</span></div>
+            <a class="project-link" href="#contact">Ask about my work ↗</a>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-art">💻</div>
+          <div class="project-body">
+            <h3>Web Projects</h3>
+            <p>Responsive websites and interactive projects built while learning web development.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>GitHub</span></div>
+            <a class="project-link" href="https://github.com/" target="_blank" rel="noopener noreferrer">Explore GitHub ↗</a>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-art">🎬</div>
+          <div class="project-body">
+            <h3>Digital Content</h3>
+            <p>Video editing, content ideas and digital storytelling for online platforms.</p>
+            <div class="tags"><span>Editing</span><span>Content</span></div>
+            <a class="project-link" href="#contact">Let's collaborate ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact-box">
+        <div>
+          <div class="eyebrow">Have an idea?</div>
+          <h2>Let's create something <span class="accent">great.</span></h2>
+          <p>Have a project, freelance opportunity or creative idea? Reach out and let's talk.</p>
+        </div>
+        <div class="contact-actions">
+          <a class="btn primary" href="https://www.instagram.com/YOUR_USERNAME/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+          <a class="btn secondary" href="mailto:YOUR_EMAIL@example.com">Email Me ↗</a>
+        </div>
+      </div>
+
+      <div class="socials">
+        <a href="https://www.instagram.com/YOUR_USERNAME/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube ↗</a>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© <span id="year"></span> Ashish. Made with purpose.</span>
+    <a href="#home" class="accent">Back to top ↑</a>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
